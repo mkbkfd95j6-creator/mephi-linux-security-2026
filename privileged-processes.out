@@ -1,0 +1,2 @@
+root        1373  0.0  0.1  23296  6880 tty3     S+   06:46   0:00 passwd
+useradm     1383  0.0  0.0   6464  2060 tty1     S+   06:49   0:00 grep --color=auto passwd

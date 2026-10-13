@@ -1,0 +1,93 @@
+    1  sudo whoami
+    2  sudo groupadd students
+    3  ls 
+    4  sudo useradd -u 1234 -g students -m user1
+    5  sudo passwd user1
+    6  id user1
+    7  getppid user1
+    8  getpid user1
+    9  id
+   10  sudo chage -l user1
+   11  sudo chage -M 90 user1
+   12  sudo chage -l user1
+   13  su -user1
+   14  su - user1
+   15  sudo chage -l user1
+   16  sudo shutdown now
+   17  mkdir -p ~/mephi-artifacts
+   18  cd ~/mephi-artifacts
+   19  sudo find /perm -4000 -type f
+   20  sudo find / perm -4000 -type f
+   21  sudo find / -perm -u+s -type f
+   22  exit
+   23  sudo find / -perm -u+s -type f -exec ls -la {} \; > ~/mephi-artifacts/setuid-files.out
+   24  cat ~/mephi-artifacts/setuid-files.out
+   25  passwd
+   26  tty
+   27  ps -eo pid, ppid, ruid, euid, user, comm | awk 'NR ==1 || ($3 != 0 && $4 == 0)' | > ~/ mephi-artifacts/privileged-processes.out
+   28  ps -eo pid, ppid, user, euser, comm | awk 'NR ==1 || ($3 != "root" && $4 == "root")' | > ~/ mephi-artifacts/privileged-processes.out
+   29  ps -eo pid, uid, euid, comm | head -3
+   30  ps aux | head -3
+   31  ps aux | grep passwd | > ~/ mephi-artifacts/privileged-processes.out
+   32  ps aux | grep passwd > ~/ mephi-artifacts/privileged-processes.out
+   33  ps aux | grep passwd > ~/mephi-artifacts/privileged-processes.out
+   34  cat ~/mephi-artifacts/privileged-processes.out
+   35  sudo cp /bin/cat /home/user1/mycat
+   36  ls -la /home/user1/mycat
+   37  sudo ls -la /home/user1/mycat
+   38  sudo chmod u+s /home/user1/mycat
+   39  sudo ls -la /home/user1/mycat
+   40  sudo -u user1 cat /etc/shadow
+   41  sudo -u user1 home/user1/mycat /etc/shadow
+   42  sudo -u user1 /home/user1/mycat /etc/shadow
+   43  stat /home/user1/mycat > ~/mephi-artifacts/stat.out
+   44  stat /home/user1/mycat >> ~/mephi-artifacts/stat.out
+   45  sudo stat /home/user1/mycat > ~/mephi-artifacts/stat.out
+   46  cat ~/mephi-artifacts/stat.out
+   47  sudo stat /home/user1 > ~/mephi-artifacts/stat.out
+   48  cat ~/mephi-artifacts/stat.out
+   49  sudo stat /home/user1/mycat > ~/mephi-artifacts/stat.out
+   50  cat ~/mephi-artifacts/stat.out
+   51  sudo stat /home/user1 >> ~/mephi-artifacts/stat.out
+   52  cat ~/mephi-artifacts/stat.out
+   53  sudo cp /bin/chown /home/user1/cchown
+   54  sudo ls -la /home/user1/cchown
+   55  sudo setcap cap_chown=ep /home/user1/cchown
+   56  sudo getcap /home/user1/cchown
+   57  sudo -u user1 touch /tmp/test
+   58  ls -la /tmp/test
+   59  sudo -u user1 chown root:root /tmp/test
+   60  sudo -u user1 /home/user1/cchown root:root /tmp/test
+   61  ls -la /tmp/test
+   62  sudo stat /home/user1/cchown >> ~/mephi-artifacts/stat.out
+   63  sudo stat /home/user1/cchown >> ~/mephi-artifacts/getcap.out
+   64  cat ~/mephi-artifacts/getcap.out
+   65  cat ~/mephi-artifacts/stat.out
+   66  echo "user1 ALL=(root) /usr/bin/date" | sudo tee /etc/sudoers.d/user1-date
+   67  sudo chmod 440 /etc/sudoers.d/user1-date
+   68  sudo visudo -c
+   69  sudo -u user1 sudo date
+   70  sudo cp /etc/sudoers ~/mephi-artifacts/sudoers
+   71  cat ~/mephi-artifacts/sudoers
+   72  sudo cat ~/mephi-artifacts/sudoers
+   73  sudo cp /etc/sudoers.d/user1-date ~/mephi-artifacts/sudoers-user1-date
+   74  sudo cat ~/mephi-artifacts/sudoers-user1-date
+   75  history > ~/mephi-artifacts/history.out
+   76  ls -la ~/mephi-artifacts/history.out
+   77  chmod 644 ~/mephi-artifacts/sudoers ~/mephi-artifacts/sudoer-user1-date
+   78  cat ~/mephi-artifacts/sudoer-user1-date
+   79  cat ~/mephi-artifacts/sudoers-user1-date
+   80  sudo cat ~/mephi-artifacts/sudoers-user1-date
+   81  cat ~/mephi-artifacts/history.out
+   82  wc -l ~/mephi-artifacts/history.out
+   83  ls -la ~/mephi-artifacts/
+   84  sudo cp /etc/passwd ~/mephi-artifacts/passwd
+   85  sudo cp /etc/shadow ~/mephi-artifacts/shadow
+   86  sudo cp /etc/group ~/mephi-artifacts/group
+   87  sudo chmod 644 ~/mephi-artifacts/passwd ~/mephi-artifacts/shadow ~/mephi-artifacts/group
+   88  ls -la ~/mephi-artifacts/
+   89  echo "бух шифр обучающегося 375471"
+   90  history > history.out
+   91  ls -la history.out
+   92  cat history.out
+   93  history > ~/mephi-artifacts/history.out
